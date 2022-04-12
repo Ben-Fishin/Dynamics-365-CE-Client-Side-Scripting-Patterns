@@ -73,9 +73,11 @@ NewPatternForm.CheckCreditHold = async function (formContext) {
     if (accountValue !== null) {
 
         //Returns Promise - determine if we should retrieve the Related Accounts "Credit Hold" value
+        //How do you ensure that common library is available during the onload event?
         var checkAccountCreditHoldPromise = Spark30Common.GetConfigurationValue("checkAccountCreditHold");
         
         //Returns Promise - retrieve the Related Account "Credit Hold" value
+        //How do you ensure that common library is available during the onload event?
         var isAccountCreditHoldPromise = Spark30Common.IsCreditHoldAccount(accountValue[0].id);
 
         //Resolve both promises in parallel.
